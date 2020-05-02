@@ -7,7 +7,14 @@
             $password = $_POST['password'];
             $query = "SELECT * FROM users WHERE email='$email' AND password = '$password'";
             $result = $db->select($query);
-            print_r($result);
+            if($result !=FALSE){
+                $value = mysqli_fetch_array($result);
+                Session::set('login',TRUE);
+                Session::set('email',$value['email']);
+                Session::set('role_id',$value['role_id']);
+                header('Location:index.php');
+                exit();
+            }
 
         }
  ?>

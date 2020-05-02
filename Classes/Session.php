@@ -18,7 +18,7 @@
 
         public static function get($key){
             if(isset($_SESSION[$key])){
-                return $SESSION[$key];
+                return $_SESSION[$key];
             }else{
                 return FALSE;
             }
