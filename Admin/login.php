@@ -15,7 +15,6 @@
                 header('Location:index.php');
                 exit();
             }
-
         }
  ?>
 <!DOCTYPE html>
