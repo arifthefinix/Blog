@@ -27,7 +27,15 @@
             }else{
                 return FALSE;
             }
+        }
 
+        public function insert($query){
+            $insert = $this->conn->query($query) or die ($this->conn->error.__LINE__);
+            if ($insert) {
+                return $insert;
+            }else{
+                return FALSE;
+            }
         }
 
     }
